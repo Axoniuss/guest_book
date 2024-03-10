@@ -5,26 +5,6 @@ header("Content-type: text/html; charset=utf-8");
 error_reporting(-1);
 
 
-// Подключение к базе данных
-$db = @mysqli_connect('127.0.0.1', 'root', '', 'gbook') or die ('Ошибка соединения с БД');
-echo mysqli_connect_error();
-// если нет подключения, тогда мы выведем текст ошибки mysqli_connect_error(), и завершим дальнейшее выполнение скрипта - die
-if (!$db) die (mysqli_connect_error());
-var_dump($db); // смотрим, что получилось
-$insert = "INSERT INTO comments (login, text) VALUES ('Оля', 'ПРИВЕТ')";
-// выполняем запрос
-$res_insert = mysqli_query($db, $insert);
-
-// проверяем выполнение запроса
-if ($res_insert) echo 'Ok';
-else echo 'Error';
-
-// выводим строку с описанием последней ошибки (если она есть)
-echo mysqli_error($db);
-
-// второй способ посмотреть ошибку - вывести сам запрос
-echo $insert;
-
 require_once dirname(__DIR__) . '/guest_book/config/init.php';
 require_once HELPERS . "/funcs.php"; // подключаем файл funcs.php
 // принятие данных из формы
@@ -39,6 +19,7 @@ echo 'Вывод массива';
 $messages = get_mess();
 $messages = array_mess($messages);
 //print_arr($messages);
+
 ?>
 
 
@@ -71,6 +52,7 @@ $messages = array_mess($messages);
 <hr>
 
 <?php
+
 if (!empty ($messages)): ?>
     <!-- проходим по массиву $messages в цикле и выводим наши сообщения -->
     <?php foreach ($messages as $message) : ?>
