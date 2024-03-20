@@ -15,5 +15,3 @@ echo 'Вывод сообщений  ';
 require_once 'helpers/comment.php';
 
 ?>
-
-
