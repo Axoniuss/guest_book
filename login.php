@@ -1,17 +1,5 @@
-<?php
-echo 'hi';
-?>
-</php>
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-<meta charset="utf-8">
-<title>регистрация и авторизации пользователей</title>
-<link href="css/style.css" media="screen" rel="stylesheet">
-<link href= 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!-- <link rel="stylesheet" href="styles.css"> -->
-</head> 
-<body>
+<?php require_once("includes/connection.php"); ?>
+<?php include("includes/header.php"); ?>
 <div class="container mlogin">
 <div id="login">
 <h1>Вход</h1>
@@ -28,8 +16,7 @@ type="text" value=""></label></p>
  </div>
   </div>
 <footer>
-© 2014 <ahref="http://www.1stwebdesigner.com/">1stwebdesigner</a>. Все права защищены.
-
+<?php include("includes/footer.php"); ?>
 </footer>
 </body>
 </html>
